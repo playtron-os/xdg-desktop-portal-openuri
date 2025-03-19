@@ -1,0 +1,8 @@
+[Unit]
+Description=xdg-desktop-portal-openuri Service
+
+[Service]
+ExecStart=/usr/bin/xdg-desktop-portal-openuri
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+node_modules
+build
+.task
+package-lock.json
+package.json
+*.tar.gz
+*.rpm
