@@ -12,5 +12,5 @@ A lightweight D-Bus service implementing the `org.freedesktop.portal.OpenURI` in
 ### From COPR
 Available on Fedora COPR:
 ```bash
-sudo dnf copr enable playtron/xdg-desktop-portal-openuri
+sudo dnf copr enable playtron/gaming
 sudo dnf install xdg-desktop-portal-openuri
