@@ -1,5 +1,5 @@
 [Unit]
-Description=xdg-desktop-portal-openuri Service
+Description=xdg-desktop-portal-openuri service
 
 [Service]
 ExecStart=/usr/bin/xdg-desktop-portal-openuri
