@@ -5,4 +5,4 @@ Description=xdg-desktop-portal-openuri Service
 ExecStart=/usr/bin/xdg-desktop-portal-openuri
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=graphical-session.target
