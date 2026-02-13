@@ -1,5 +1,5 @@
 Name:           xdg-desktop-portal-openuri
-Version:        1.0.1
+Version:        1.1.0
 Release:        1%{?dist}
 Summary:        A minimal xdg-desktop-portal frontend for OpenURI
 
