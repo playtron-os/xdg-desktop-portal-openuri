@@ -44,8 +44,15 @@ rpm-setup:
 	cp ./README.md /tmp/rpmbuild/SOURCES/xdg-desktop-portal-openuri-$(VERSION)/
 	cd /tmp/rpmbuild/SOURCES && tar czf xdg-desktop-portal-openuri-$(VERSION).tar.gz xdg-desktop-portal-openuri-$(VERSION)
 
+.PHONY: srpm
+srpm: ## Builds the source RPM package
+	make rpm-setup
+	tar --transform 's/^build/xdg-desktop-portal-openuri/' -czf ./xdg-desktop-portal-openuri-$(VERSION).tar.gz -C . build
+	rpmbuild --define "_topdir /tmp/rpmbuild" -bs /tmp/rpmbuild/SPECS/xdg-desktop-portal-openuri.spec
+	mv /tmp/rpmbuild/SRPMS/xdg-desktop-portal-openuri-$(VERSION)-1.fc41.src.rpm .
+
 .PHONY: rpm
-rpm: ## Builds the RPM package
+rpm: ## Builds the binary RPM package
 	make rpm-setup
 	tar --transform 's/^build/xdg-desktop-portal-openuri/' -czf ./xdg-desktop-portal-openuri-$(VERSION).tar.gz -C . build
 	rpmbuild --define "_topdir /tmp/rpmbuild" -bb /tmp/rpmbuild/SPECS/xdg-desktop-portal-openuri.spec
