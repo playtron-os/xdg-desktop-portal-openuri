@@ -49,14 +49,14 @@ srpm: ## Builds the source RPM package
 	make rpm-setup
 	tar --transform 's/^build/xdg-desktop-portal-openuri/' -czf ./xdg-desktop-portal-openuri-$(VERSION).tar.gz -C . build
 	rpmbuild --define "_topdir /tmp/rpmbuild" -bs /tmp/rpmbuild/SPECS/xdg-desktop-portal-openuri.spec
-	mv /tmp/rpmbuild/SRPMS/xdg-desktop-portal-openuri-$(VERSION)-1.fc41.src.rpm .
+	mv /tmp/rpmbuild/SRPMS/xdg-desktop-portal-openuri-$(VERSION)-1.fc*.src.rpm .
 
 .PHONY: rpm
 rpm: ## Builds the binary RPM package
 	make rpm-setup
 	tar --transform 's/^build/xdg-desktop-portal-openuri/' -czf ./xdg-desktop-portal-openuri-$(VERSION).tar.gz -C . build
 	rpmbuild --define "_topdir /tmp/rpmbuild" -bb /tmp/rpmbuild/SPECS/xdg-desktop-portal-openuri.spec
-	mv /tmp/rpmbuild/RPMS/x86_64/xdg-desktop-portal-openuri-$(VERSION)-1.fc41.x86_64.rpm .
+	mv /tmp/rpmbuild/RPMS/x86_64/xdg-desktop-portal-openuri-$(VERSION)-1.fc*.x86_64.rpm .
 
 # Run the built binary from the build folder
 .PHONY: run
